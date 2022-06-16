@@ -1,0 +1,7 @@
+#+TITLE: Explorando formalizaciones con Lean
+
+Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg.de/index.html][Clara Löh]] titulado
+[[https://loeh.app.uni-regensburg.de/mapa/main.pdf][Exploring formalisation (A primer in human-readable mathematics in Lean
+3 with examples from simplicial topology)]] cuyo código se encuentra en
+[[https://gitlab.com/polywuisch/mapa_notes][GitLab]].
+

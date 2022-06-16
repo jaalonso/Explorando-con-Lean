@@ -1,0 +1,8 @@
+[package]
+name = "Explorando-formalizaciones"
+version = "0.1"
+lean_version = "leanprover-community/lean:3.36.0"
+path = "src"
+
+[dependencies]
+mathlib = {git = "https://github.com/leanprover-community/mathlib", rev = "9c224ff6747a08ce8093289f4243ff2513072c21"}
