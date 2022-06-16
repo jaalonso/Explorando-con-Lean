@@ -36,6 +36,28 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
 
 * Introducción
 
++ La formalización de las matemáticas en un asistente de pruebas tiene
+  los siguientes beneficios:
+  + La implementación de las matemáticas requiere un conocimiento muy
+    profundo de del tema y de todos los casos extremos. Por lo tanto,
+    una formalización exitosa permite un mejor conocimiento de los
+    detalles.
+  + Una formalización en un asistente de pruebas puede conducir a un
+    código ejecutable y, por tanto ofrece la oportunidad de realizar
+    experimentos con ejemplos concretos.
+  + Los asistentes de pruebas fomentan la abstracción. A menudo es más
+    fácil formalizar conceptos de forma declarativa a través de
+    propiedades universales en lugar de construcciones concretas y
+    potencialmente engorrosas. Esto puede conducir a una una visión más
+    clara de las cuestiones e ideas fundamentales.
+  + Interactuar con un asistente de pruebas es divertido y adictivo.
+
++ Si los estudiantes aprenden las técnicas básicas de demostración a
+  través de un asistente de pruebas, pueden obtener una
+  retroalimentación inmediata y pueden experimentar con pruebas y
+  ejemplos. Además, los estudiantes pueden ver en términos más prácticos
+  cómo las abstracciones simplifican la vida matemática.
+  
 * El sistema de demostración Lean
 
 ** Sistemas de demostración
