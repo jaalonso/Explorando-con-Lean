@@ -5,3 +5,85 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
 3 with examples from simplicial topology)]] cuyo código se encuentra en
 [[https://gitlab.com/polywuisch/mapa_notes][GitLab]].
 
+* Contenido                                                             :TOC:
+- [[#introducción][Introducción]]
+- [[#el-sistema-de-demostración-lean][El sistema de demostración Lean]]
+  - [[#sistemas-de-demostración][Sistemas de demostración]]
+  - [[#fundamentos][Fundamentos]]
+  - [[#tipos][Tipos]]
+  - [[#demostraciones][Demostraciones]]
+  - [[#ejercicios][Ejercicios]]
+- [[#ejemplos-básicos][Ejemplos básicos]]
+  - [[#aplicaciones-inyectivas-y-suprayectivas][Aplicaciones inyectivas y suprayectivas]]
+  - [[#inducción][Inducción]]
+  - [[#conmutadores][Conmutadores]]
+  - [[#el-cero-real][El cero real]]
+  - [[#ejercicios-1][Ejercicios]]
+- [[#opciones-de-diseño][Opciones de diseño]]
+  - [[#diseño-recursivo][Diseño recursivo]]
+  - [[#complejos-simpliciales][Complejos simpliciales]]
+  - [[#aplicaciones-simpliciales][Aplicaciones simpliciales]]
+  - [[#complejos-simpliciales-finitos][Complejos simpliciales finitos]]
+  - [[#generación-de-complejos-simpliciales][Generación de complejos simpliciales]]
+  - [[#combinación-de-complejos-simpliciales][Combinación de complejos simpliciales]]
+  - [[#la-característica-de-euler][La característica de Euler]]
+  - [[#hacia-una-biblioteca][Hacia una biblioteca]]
+  - [[#ejercicios-2][Ejercicios]]
+- [[#abstracción-y-prototipado][Abstracción y prototipado]]
+  - [[#formalización-directa-seminormas-functoriales][Formalización directa: Seminormas functoriales]]
+  - [[#formalización-indirecta-multiplicidad-susceptible][Formalización indirecta: Multiplicidad susceptible]]
+
+* Introducción
+
+* El sistema de demostración Lean
+
+** Sistemas de demostración
+
+** Fundamentos
+
+** Tipos
+
+** Demostraciones
+
+** Ejercicios   
+  
+* Ejemplos básicos
+
+** Aplicaciones inyectivas y suprayectivas
+
+** Inducción
+
+** Conmutadores
+
+** El cero real
+
+** Ejercicios   
+
+* Opciones de diseño
+
+** Diseño recursivo
+
+** Complejos simpliciales
+
+** Aplicaciones simpliciales
+
+** Complejos simpliciales finitos
+
+** Generación de complejos simpliciales
+
+** Combinación de complejos simpliciales
+
+** La característica de Euler
+
+** Hacia una biblioteca
+
+** Ejercicios
+
+* Abstracción y prototipado
+
+** Formalización directa: Seminormas functoriales
+
+** Formalización indirecta: Multiplicidad susceptible
+
+
+   
