@@ -1,4 +1,5 @@
 #+TITLE: Explorando formalizaciones con Lean
+#+OPTIONS: num:t
 
 Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg.de/index.html][Clara Löh]] titulado
 [[https://loeh.app.uni-regensburg.de/mapa/main.pdf][Exploring formalisation (A primer in human-readable mathematics in Lean
