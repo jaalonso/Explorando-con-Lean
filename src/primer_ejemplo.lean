@@ -1,5 +1,7 @@
 -- primer_ejemplo.lean
 -- Primer ejemplo de demostración.
+-- José A. Alonso Jiménez <https://jaalonso.github.io>
+-- Sevilla, 16-junio-2022
 -- ---------------------------------------------------------------------
 
 import tactic 
