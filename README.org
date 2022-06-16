@@ -8,8 +8,8 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
 
 * Contenido                                                             :TOC:
 - [[#introducción][Introducción]]
-- [[#el-sistema-de-demostración-lean][El sistema de demostración Lean]]
-  - [[#sistemas-de-demostración][Sistemas de demostración]]
+- [[#el-asistente-de-pruebas-lean][El asistente de pruebas Lean]]
+  - [[#asistentes-de-pruebas][Asistentes de pruebas]]
   - [[#fundamentos][Fundamentos]]
   - [[#tipos][Tipos]]
   - [[#demostraciones][Demostraciones]]
@@ -58,15 +58,154 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
   ejemplos. Además, los estudiantes pueden ver en términos más prácticos
   cómo las abstracciones simplifican la vida matemática.
   
-* El sistema de demostración Lean
+* El asistente de pruebas Lean
 
-** Sistemas de demostración
+** Asistentes de pruebas
+
++ Un asistente de pruebas es un lenguaje de programación junto con su
+  correspondiente intérprete/compilador que nos permite formalizar
+  objetos y hechos matemáticos (definiciones, teoremas, pruebas y
+  ejemplos).
+
++ La principal tarea de un asistente de pruebas no es encontrar pruebas,
+  sino comprobar que las pruebas son correctas.
+
++ Los asistentes de pruebas ayudan a detectar y evitar errores. Además,
+  indirectamente también conducen a una mejor comprensión general de las
+  conexiones matemáticas y, a largo plazo, conducirán a formas más
+  sistemáticas y estructuradas de generalizar los resultados a nuevos
+  contextos.
+
++ Uno de los grandes retos es utilizar los asistentes de pruebas de tal
+  manera que la formalización no sólo sea fácil de comprobar por el
+  intérprete/compilador sino también comprensible para los lectores
+  humanos: La belleza de las matemáticas no reside en los complicados
+  detalles técnicos, sino en las ideas subyacentes.
+
++ Hay muchos asistentes de pruebas; actualmente, los asistentes de
+  pruebas de propósito general más populares son Coq, Isabelle y Lean.
 
 ** Fundamentos
 
++ La formalización de las matemáticas consta de los siguientes componentes
+  - un universo de objetos,
+  - un lenguaje lógico,
+  - un concepto de prueba y
+  - un metalenguaje (en el que se formula todo esto).
+
++ En las pruebas clásicas de papel y lápiz, solemos trabajar con la
+  teoría de conjuntos, con una lógica clásica y con un cálculo de
+  pruebas que nos permite descomponer, construir y recombinar enunciados
+  lógicos.
+
++ Lean es un lenguaje de programación funcional. Lean se basa en la
+  teoría de tipos y en el cálculo de construcciones inductivas en lugar
+  de la teoría de conjuntos, ofrece la posibilidad de elegir entre la
+  lógica clásica y la intuicionista, y el cálculo de pruebas se basa en
+  el isomorfismo de Curry-Howard.
+  
 ** Tipos
 
++ El lenguaje de programación Lean es de tipo estático; es decir, todos
+  los términos están sujetos a reglas de tipado y sus tipos se declaran
+  o infieren en tiempo de compilación. 
+
++ Los tipos en Lean se pueden construir combinando los siguientes:
+  - Tipos de función (símbolo →): Si A y B son tipos, entonces A → B
+    denota el tipo de todas las funciones de A a B.
+  - Tipos de pares (símbolo ×): Si A y B son tipos, entonces A × B
+    denota el tipo de todos los pares con el primer componente del tipo
+    A y el segundo componente del tipo B.
+  - Tipos inductivos (palabra clave ~inductive~):
+    + Los tipos inductivos tienen una lista finita de constructores que
+      pueden depender recursivamente unos de otros.
+    + Ejemplos de tipos inductivos son los tipos de enumeración simple,
+      las listas de números naturales y los árboles.
+  - Tipos de registro (palabra clave ~structure~):
+    + Los tipos de registro tienen un único constructor sobre una lista
+      finita de campos.
+    + Se puede acceder a estos campos a través de las proyecciones
+      correspondientes.
+    + Ejemplos de tipos de registro son los tipos de pares o las
+      estructuras matemáticas combinadas que constan de múltiples
+      componentes o propiedades.
+    + Los registros en Lean son extensibles y, por tanto, pueden
+      utilizarse para construir teorías de forma jerárquica.
+  - Además, Lean tiene cierto soporte para subtipos y cocientes.
+
++ Lean admite clases de tipo.
+  + Las clases de tipos (palabra clave ~class~ o ~@[class] structure~)
+    son una variante de los tipos de registro.
+  + Las clases de tipos pueden verse como la formalización de un
+    conjunto finito de axiomas sobre los tipos de parámetros dados.
+  + Dar una instancia de una clase de tipo corresponde a demostrar los
+    axiomas correspondientes sobre los tipos de parámetros.
+  + Las clases de tipos y sus instancias están sujetas a la
+    inferencia de clases de tipos.
+  + Ejemplos de clases de tipos son todo tipo de estructuras algebraicas
+    como monoides, grupos, etc. Análogamente, también las estructuras
+    métricas y los conceptos de la teoría de categorías se axiomatizan
+    mediante clases de tipos.
+  + Es posible definir múltiples instancias para la misma clase de tipos
+    sobre los mismos tipos de parámetros; matemáticamente, esto
+    corresponde a, por ejemplo definir múltiples estructuras de grupo
+    sobre el mismo conjunto.
+
++ Tipos dependientes:
+  + Lean se basa en la teoría de tipos dependientes.
+  + Los tipos son ciudadanos de primera clase y los tipos de suma y
+    producto subyacentes a los tipos de función, tipos inductivos y
+    tipos de registro son sumas dependientes (tipos Sigma dependientes:
+    Σ) y productos (tipos Pi dependientes: Π).
+  + Lean admite restricciones y dependencias en los tipos de los
+    argumentos y en el del resultado resultado.
+
++ Los tipos de Lean están organizados en una jerarquía:
+  + ~Prop~ (equivalentemente, ~Sort 0~) es la parte inferior de la
+    jerarquía de tipos.
+    + Las expresiones de tipo ~Prop~ se consideran "proposiciones".
+    + El tipo ~Prop~ contiene las constantes booleanas ~true~ y ~false~
+    + Las conectivas lógicas convierten los miembros del tipo ~Prop~ en
+      resultados del tipo ~Prop~.
+  + El ~Type u~ (equivalentemente, ~Sort (u+1)~), para un número natural
+    ~u~, pertenece a ~Type (u+1)~.
+  + ~Type~ es una abreviatura de ~Type 0~.
+  + ~Type*~ es una abreviatura para el ~Type u~ para algún nivel de
+    universo no especificado ~u~.
+  + Los constructores de tipos (como →) operan sobre estos universos de
+    tipos.
+
++ Los términos de tipo ~Prop~ satisfacen la *extensionalidad
+  proposicional*: Si ~A : Prop~ y ~x, y : A~, entonces ~x~ e ~y~ se
+  consideran iguales en todos los aspectos.
+
 ** Demostraciones
+
++ En las pruebas matemáticas se usa el /modus ponens/:
+  + Si el enunciado ~A~ está demostrado y si la implicación ~A ⇒ B~ está demostrada, entonces
+    se deduce que también se demuestra ~B~.
+   
++ El *isomorfismo Curry-Howard* identifica
+  - enunciados con tipos y
+  - pruebas de enunciados con elementos del tipo correspondiente.
+
++ El /modus ponens/ corresponde a la aplicación de la función:
+  + Si ~x : A~  y ~f : A → B~, entonces ~f x : B~.
+
++ Las pruebas en Lean son sólo implementaciones de funciones.
+  + Una prueba del lema
+    #+begin_src lean
+lemma primer_resultado
+  (x : A)
+  : ϕ x :=
+begin
+...
+end
+    #+end_src
+    no es más que una implementación de una función del tipo ~Π (x : A), ϕ x~.
+
++ [[./src/primer_ejemplo.lean][Primer ejemplo de demostración]] 
+#+INCLUDE: "./src/primer_ejemplo.lean" src lean
 
 ** Ejercicios   
   
