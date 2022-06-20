@@ -13,13 +13,12 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
   - [[#fundamentos][Fundamentos]]
   - [[#tipos][Tipos]]
   - [[#demostraciones][Demostraciones]]
-  - [[#ejercicios][Ejercicios]]
 - [[#ejemplos-básicos][Ejemplos básicos]]
   - [[#aplicaciones-inyectivas-y-suprayectivas][Aplicaciones inyectivas y suprayectivas]]
   - [[#inducción][Inducción]]
   - [[#conmutadores][Conmutadores]]
   - [[#el-cero-real][El cero real]]
-  - [[#ejercicios-1][Ejercicios]]
+  - [[#ejercicios][Ejercicios]]
 - [[#opciones-de-diseño][Opciones de diseño]]
   - [[#diseño-recursivo][Diseño recursivo]]
   - [[#complejos-simpliciales][Complejos simpliciales]]
@@ -29,7 +28,7 @@ Estas son las notas de la lectura del libro de [[https://loeh.app.uni-regensburg
   - [[#combinación-de-complejos-simpliciales][Combinación de complejos simpliciales]]
   - [[#la-característica-de-euler][La característica de Euler]]
   - [[#hacia-una-biblioteca][Hacia una biblioteca]]
-  - [[#ejercicios-2][Ejercicios]]
+  - [[#ejercicios-1][Ejercicios]]
 - [[#abstracción-y-prototipado][Abstracción y prototipado]]
   - [[#formalización-directa-seminormas-functoriales][Formalización directa: Seminormas functoriales]]
   - [[#formalización-indirecta-multiplicidad-susceptible][Formalización indirecta: Multiplicidad susceptible]]
@@ -207,12 +206,13 @@ end
 + [[./src/primer_ejemplo.lean][Primer ejemplo de demostración]] 
 #+INCLUDE: "./src/primer_ejemplo.lean" src lean
 
-** Ejercicios   
-  
 * Ejemplos básicos
 
 ** Aplicaciones inyectivas y suprayectivas
 
++ [[./src/aplicaciones.lean][Aplicaciones inyectivas, suprayectivas y biyectivas]] 
+#+INCLUDE: "./src/aplicaciones.lean" src lean
+   
 ** Inducción
 
 ** Conmutadores
