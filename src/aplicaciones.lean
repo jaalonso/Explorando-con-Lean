@@ -5,25 +5,25 @@
 -- ---------------------------------------------------------------------
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Importar la librería de tácticas-
+-- Ejercicio 1. Importar la librería de tácticas-
 -- ---------------------------------------------------------------------
 
 import tactic
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Abrir la lógica clásica.
+-- Ejercicio 2. Abrir la lógica clásica.
 -- ---------------------------------------------------------------------
 
 open classical  
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Declarar X, Y y Z variables de tipo-
+-- Ejercicio 3. Declarar X, Y y Z variables de tipo-
 -- ---------------------------------------------------------------------
 
 variables {X Y Z : Type*}
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función es_inyectiva tal (es_inyectiva f)
+-- Ejercicio 4. Definir la función es_inyectiva tal (es_inyectiva f)
 -- expresa que f es inyectiva.
 -- ---------------------------------------------------------------------
 
@@ -32,7 +32,7 @@ def es_inyectiva
   ∀ x x', f x = f x' → x = x'
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función es_suprayectiva tal (es_suprayectiva f)
+-- Ejercicio 5. Definir la función es_suprayectiva tal (es_suprayectiva f)
 -- expresa que f es suprayectiva.
 -- ---------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ def es_suprayectiva
   ∀ y, ∃ x, f x = y  
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función es_biyectiva tal (es_biyectiva f)
+-- Ejercicio 6. Definir la función es_biyectiva tal (es_biyectiva f)
 -- expresa que f es biyectiva.
 -- ---------------------------------------------------------------------
 
@@ -50,7 +50,7 @@ def es_biyectiva
   es_inyectiva f ∧ es_suprayectiva f    
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que las funciones biyectivas son inyectivas.
+-- Ejercicio 7. Demostrar que las funciones biyectivas son inyectivas.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -72,7 +72,7 @@ lemma biy_iny
 f_biyectiva.1
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que las funciones biyectivas son suprayectivas.
+-- Ejercicio 8. Demostrar que las funciones biyectivas son suprayectivas.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -94,7 +94,7 @@ lemma biy_supr
 f_biyectiva.2
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si f es suprayectiva e inyectiva, entonces
+-- Ejercicio 9. Demostrar que si f es suprayectiva e inyectiva, entonces
 -- es biyectiva.
 -- ---------------------------------------------------------------------
 
@@ -119,7 +119,7 @@ lemma supr_iny_biy
 ⟨f_inyectiva, f_suprayectiva⟩
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si (g ∘ f) es inyectiva, entonces f es
+-- Ejercicio 10. Demostrar que si (g ∘ f) es inyectiva, entonces f es
 -- inyectiva. 
 -- ---------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si (g ∘ f) es suprayectiva, entonces f es
+-- Ejercicio 11. Demostrar que si (g ∘ f) es suprayectiva, entonces f es
 -- suprayectiva. 
 -- ---------------------------------------------------------------------
 
@@ -180,7 +180,7 @@ begin
 end  
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que si (f ∘ f) es biyectiva, entonces f es
+-- Ejercicio 12. Demostrar que si (f ∘ f) es biyectiva, entonces f es
 -- biyectiva. 
 -- ---------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ begin
 end      
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir el tipo A con los constructores A1, A2 y A3.
+-- Ejercicio 13. Definir el tipo A con los constructores A1, A2 y A3.
 -- ---------------------------------------------------------------------
 
 inductive A : Type
@@ -239,7 +239,7 @@ inductive A : Type
 open A
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función
+-- Ejercicio 14. Definir la función
 --   f ; A -> A
 -- tal que 
 --   f A1 = A1, 
@@ -253,7 +253,7 @@ def f : A → A
   | A3 := A2
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que f no es inyectiva.
+-- Ejercicio 15. Demostrar que f no es inyectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -295,7 +295,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que f no es suprayectiva.
+-- Ejercicio 16. Demostrar que f no es suprayectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -352,7 +352,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir el tipo B con los constructores B1 y B2.
+-- Ejercicio 17. Definir el tipo B con los constructores B1 y B2.
 -- ---------------------------------------------------------------------
 
 inductive B 
@@ -362,7 +362,7 @@ inductive B
 open B
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función 
+-- Ejercicio 18. Definir la función 
 --    g : B → B
 -- tal que 
 --    g B1 = B2 
@@ -374,7 +374,7 @@ def g : B → B
   | B2 := B1
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que g es biyectiva.
+-- Ejercicio 19. Demostrar que g es biyectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -431,7 +431,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir el conjunto conj_123 cuyos elementos son los
+-- Ejercicio 20. Definir el conjunto conj_123 cuyos elementos son los
 -- números naturales 1, 2 y 3.
 -- ---------------------------------------------------------------------
 
@@ -439,7 +439,7 @@ def conj_123 : set ℕ :=
   {1,2,3}
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que
+-- Ejercicio 21. Demostrar que
 --    1 ∈ conj_123
 -- ---------------------------------------------------------------------
 
@@ -459,7 +459,7 @@ lemma uno_en_123 : 1 ∈ conj_123 :=
 by {fconstructor, refl}
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que
+-- Ejercicio 22. Demostrar que
 --    2 ∈ conj_123
 -- ---------------------------------------------------------------------
 
@@ -480,7 +480,7 @@ lemma dos_en_123 : 2 ∈ conj_123 :=
 by {apply or.inr, simp}
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que
+-- Ejercicio 23. Demostrar que
 --    3 ∈ conj_123
 -- ---------------------------------------------------------------------
 
@@ -501,7 +501,7 @@ lemma tres_en_123 : 3 ∈ conj_123 :=
 by {apply or.inr, simp}
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función
+-- Ejercicio 24. Definir la función
 --    const1 : conj_123 → conj_123 
 -- que aplica todos los elementos en el 1.
 -- ---------------------------------------------------------------------
@@ -510,7 +510,7 @@ def const1 : conj_123 → conj_123 :=
 λ ⟨x, _⟩, ⟨1, uno_en_123⟩ 
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Definir la función 
+-- Ejercicio 25. Definir la función 
 --    h : conj_123 → conj_123
 -- que aplica el 3 en el 2 y los demás en el 1.
 -- ---------------------------------------------------------------------
@@ -521,7 +521,7 @@ def h : conj_123 → conj_123 :=
            else ⟨ 1, uno_en_123 ⟩
 
 -- ---------------------------------------------------------------------
--- Ejercicio. Demostrar que h no es inyectiva.
+-- Ejercicio 26. Demostrar que h no es inyectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -556,11 +556,11 @@ begin
 end
 
 -- =====================================================================
--- § Ejercicios                                                       --
+-- § Ejercicios complementarios
 -- =====================================================================
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.1.a. Definir la aplicación identidad
+-- Ejercicio 27. Definir la aplicación identidad
 -- ---------------------------------------------------------------------
 
 def apl_id 
@@ -569,7 +569,7 @@ def apl_id
 λ x, x
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.1.b. Demostrar que la aplicación identidad es
+-- Ejercicio 28. Demostrar que la aplicación identidad es
 -- biyectiva.
 -- ---------------------------------------------------------------------
 
@@ -619,7 +619,7 @@ begin
 end  
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2:E.2. Demostrar que la composición de funciones inyectivas
+-- Ejercicio 29. Demostrar que la composición de funciones inyectivas
 -- es inyectiva.
 -- ---------------------------------------------------------------------
 
@@ -671,7 +671,7 @@ begin
 end      
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.3.a. Sea f : X → Y tal que existen x, x' ∈ X tales que 
+-- Ejercicio 30. Sea f : X → Y tal que existen x, x' ∈ X tales que 
 -- x ≠ x' y f x = f x'. Demostrar que f no es inyectiva.
 -- ---------------------------------------------------------------------
 
@@ -689,7 +689,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.3.a.  Usar el lema anterior para demostrar que f no es
+-- Ejercicio 31.  Usar el lema anterior para demostrar que f no es
 -- inyectiva.
 -- ---------------------------------------------------------------------
 
@@ -720,7 +720,7 @@ begin
 end
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.4.a. Demostrar que (g ∘ g = id).
+-- Ejercicio 32. Demostrar que (g ∘ g = id).
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
@@ -755,7 +755,7 @@ begin
 end    
 
 -- ---------------------------------------------------------------------
--- Ejercicio 2.E.4.a. Demostrar que g es biyectiva.
+-- Ejercicio 33. Demostrar que g es biyectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
