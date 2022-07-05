@@ -184,7 +184,7 @@ end
 -- biyectiva. 
 -- ---------------------------------------------------------------------
 
--- 2ª demostración
+-- 1ª demostración
 -- ===============
 
 example
@@ -569,8 +569,7 @@ def apl_id
 λ x, x
 
 -- ---------------------------------------------------------------------
--- Ejercicio 28. Demostrar que la aplicación identidad es
--- biyectiva.
+-- Ejercicio 28. Demostrar que la aplicación identidad es biyectiva.
 -- ---------------------------------------------------------------------
 
 -- 1ª demostración
