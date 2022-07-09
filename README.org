@@ -212,11 +212,17 @@ end
 
 + [[./src/aplicaciones.lean][Aplicaciones inyectivas, suprayectivas y biyectivas]] 
 #+INCLUDE: "./src/aplicaciones.lean" src lean
-   
+
 ** Inducción
+
++ [[./src/induccion.lean][Inducción]]
+#+INCLUDE: "./src/induccion.lean" src lean
 
 ** Conmutadores
 
++ [[./src/Conmutadores_en_grupos.lean][Conmutadores en grupos]]. 
+#+INCLUDE: "./src/Conmutadores_en_grupos.lean" src lean
+   
 ** El cero real
 
 ** Ejercicios   
